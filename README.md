@@ -92,7 +92,7 @@ Returns a list of events based on search params.
 * `artist_name` - The name of an artist to search for.
 * `location` - The location of the event. 
 
-Note: Requires either `artist_name` or `location`, not both.
+Note: Requires either `artist_name` or `location` but not both.
 
 ###### Optional Parameters:
 * `min_date`- The earliest date of events to return (YYYY-MM-DD).
@@ -173,4 +173,43 @@ Returns a list of venues based on search params.
 ```js
 songkickApi.searchVenues({ query: 'First Avenue' });
 songkickApi.searchVenues({ query: '7th Street Entry', page: 5, per_page: 25 });
+```
+
+## Locations API
+### searchLocations(params)
+Returns a list of locations based on search params.
+
+###### Required Parameters:
+* `query` - The name of an location to search for.
+* `location` - The lat/lng, ip, or clientip of the location.
+
+Note: Requires either `query` or `location` but not both.
+
+###### Optional Parameters:
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.searchLocations({ query: 'New York City' });
+songkickApi.searchLocations({ query: 'New York City', page: 4, per_page: 25 });
+songkickApi.searchLocations({ location: 'geo:44.9325881,-93.26754419999999' });
+songkickApi.searchLocations({ location: 'ip:127.0.0.1' });
+songkickApi.searchLocations({ location: 'clientip:127.0.0.1' });
+```
+
+### getLocationUpcomingEvents(metroAreaId, params)
+Returns upcoming events for a metro location.
+
+###### Required Parameters:
+  * `metroAreaId` - The ID of the metro area to get upcoming events for.
+
+###### Optional Parameters:
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.getLocationUpcomingEvents(35130);
+songkickApi.getLocationUpcomingEvents(35130, { page: 5, per_page: 25 });
 ```
