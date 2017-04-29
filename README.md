@@ -1,4 +1,8 @@
 # songkick-api-node
+[![NPM Version](https://badge.fury.io/js/songkick-api-node.svg)](https://badge.fury.io/js/songkick-api-node)
+[![Dependencies](https://david-dm.org/schnogz/songkick-api-node.svg)](https://david-dm.org/schnogz/songkick-api-node.svg)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/schnogz/ng-required-params/issues)
+
 A full-fledged Songkick API wrapper/enhancer for Node.js.
 
 ## Overview
