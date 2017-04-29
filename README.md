@@ -20,9 +20,8 @@ If you would like XML responses, simply construct the library as follows:
 const songkickApi = new Songkick('YourApiKey', { returnXML: true });
 ```
 
-## API Documentation
-### Artists
-#### getArtistUpcomingEvents(artistId, params)
+## Artists API
+### getArtistUpcomingEvents(artistId, params)
 Returns events an artist has performed in in the past.
 
 ###### Required Parameters:
@@ -40,7 +39,7 @@ songkickApi.getArtistUpcomingEvents(253846, { order: 'desc' });
 songkickApi.getArtistUpcomingEvents(253846, { order: 'desc', page: 4, per_page: 25 });
 ```
 
-#### getArtistPastEvents(artistId, params)
+### getArtistPastEvents(artistId, params)
 Returns events an artist has performed in in the past.
 
 ###### Required Parameters:
@@ -58,7 +57,7 @@ songkickApi.getArtistPastEvents(253846, { order: 'desc' });
 songkickApi.getArtistPastEvents(253846, { order: 'desc', page: 4, per_page: 25 });
 ```
 
-#### getArtistSimilar(artistId)
+### getArtistSimilar(artistId)
 Returns a list of artists similar to a given artist.
 
 ###### Required Parameters:
@@ -69,7 +68,7 @@ Returns a list of artists similar to a given artist.
 songkickApi.getArtistSimilar(253846);
 ```
 
-#### searchArtists(params)
+### searchArtists(params)
 Returns a list of artists based on search string.
 
 ###### Required Parameters:
@@ -85,8 +84,8 @@ songkickApi.searchArtists({ query: 'Radiohead' });
 songkickApi.searchArtists({ query: 'Radiohead', page: 6 });
 ```
 
-### Events
-#### searchEvents(params)
+## Events API
+### searchEvents(params)
 Returns a list of events based on search params.
 
 ###### Required Parameters:
@@ -110,8 +109,8 @@ songkickApi.searchEvents({ location: 'geo:44.9325881,-93.26754419999999' });
 songkickApi.searchEvents({ location: 'sk:35130' });
 ```
 
-#### getEventDetails(eventId)
-Gets detailed event information, including venue information.
+### getEventDetails(eventId)
+Returns detailed event information, including venue information.
 
 ###### Required Parameters:
   * `eventId` - The ID of the event.
@@ -121,8 +120,8 @@ Gets detailed event information, including venue information.
 songkickApi.getEventDetails(11129128);
 ```
 
-#### getEventSetlist(eventId)
-Gets the setlist for a specific event.
+### getEventSetlist(eventId)
+Returns the setlist for a specific event.
 
 ###### Required Parameters:
   * `eventId` - The ID of the event.
@@ -130,4 +129,48 @@ Gets the setlist for a specific event.
 ###### Example:
 ```js
 songkickApi.getEventSetlist(11129128);
+```
+
+## Venue API
+### getVenue(venueId)
+Returns details about a given venue.
+
+###### Required Parameters:
+  * `venueId` - The ID of the venue.
+
+###### Example:
+```js
+songkickApi.getVenue(17522);
+```
+
+### getVenueUpcomingEvents(venueId, params)
+Returns upcoming events for a given venue.
+
+###### Required Parameters:
+  * `venueId` - The ID of the venue.
+  
+###### Optional Parameters:
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.getVenueUpcomingEvents(17522);
+songkickApi.getVenueUpcomingEvents(17522, { page: 5, per_page: 10 });
+```
+
+### searchVenues(params)
+Returns a list of venues based on search params.
+
+###### Required Parameters:
+  * `query` - The searched venue string.
+
+###### Optional Parameters:
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.searchVenues({ query: 'First Avenue' });
+songkickApi.searchVenues({ query: '7th Street Entry', page: 5, per_page: 25 });
 ```
