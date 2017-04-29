@@ -21,6 +21,70 @@ const songkickApi = new Songkick('YourApiKey', { returnXML: true });
 ```
 
 ## API Documentation
+### Artists
+#### getArtistUpcomingEvents(artistId, params)
+Returns events an artist has performed in in the past.
+
+###### Required Parameters:
+* `artistId` - The ID of the artist.
+
+###### Optional Parameters:
+* `order` - The order you want the events returned in. Either 'asc' or 'desc'), defaults is 'asc'.
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.getArtistUpcomingEvents(253846);
+songkickApi.getArtistUpcomingEvents(253846, { order: 'desc' });
+songkickApi.getArtistUpcomingEvents(253846, { order: 'desc', page: 4, per_page: 25 });
+```
+
+#### getArtistPastEvents(artistId, params)
+Returns events an artist has performed in in the past.
+
+###### Required Parameters:
+* `artistId` - The ID of the artist.
+
+###### Optional Parameters:
+* `order` - The order you want the events returned in. Either 'asc' or 'desc'), defaults is 'asc'.
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Examples:
+```js
+songkickApi.getArtistPastEvents(253846);
+songkickApi.getArtistPastEvents(253846, { order: 'desc' });
+songkickApi.getArtistPastEvents(253846, { order: 'desc', page: 4, per_page: 25 });
+```
+
+#### getArtistSimilar(artistId)
+Returns a list of artists similar to a given artist.
+
+###### Required Parameters:
+* `artistId` - The ID of the artist.
+
+###### Example:
+```js
+songkickApi.getArtistSimilar(253846);
+```
+
+#### searchArtists(params)
+Returns a list of artists based on search string.
+
+###### Required Parameters:
+* `query` - The searched string.
+
+###### Optional Parameters:
+* `page`- The offset for paginated results (first page = 1).
+* `per_page`- The number of results for paginated results (max 50).
+
+###### Example:
+```js
+songkickApi.searchArtists({ query: 'Radiohead' });
+songkickApi.searchArtists({ query: 'Radiohead', page: 6 });
+```
+
 ### Events
 #### searchEvents(params)
 Returns a list of events based on search params.
@@ -29,7 +93,7 @@ Returns a list of events based on search params.
 * `artist_name` - The name of an artist to search for.
 * `location` - The location of the event. 
 
-Note: Requires either artist_name or location, not both.
+Note: Requires either `artist_name` or `location`, not both.
 
 ###### Optional Parameters:
 * `min_date`- The earliest date of events to return (YYYY-MM-DD).
@@ -37,7 +101,7 @@ Note: Requires either artist_name or location, not both.
 * `page`- The offset for paginated results (first page = 1).
 * `per_page`- The number of results for paginated results (max 50).
 
-Note: If using either date option, both min_date and max_date are required.
+Note: If using either of the date options, both `min_date` and `max_date` are then required.
 
 ###### Examples:
 ```js
@@ -51,10 +115,10 @@ Gets detailed event information, including venue information.
 
 ###### Required Parameters:
   * `eventId` - The ID of the event.
-  
+
 ###### Example:
 ```js
-songkickApi.getEventDetails(eventId);
+songkickApi.getEventDetails(11129128);
 ```
 
 #### getEventSetlist(eventId)
@@ -62,8 +126,8 @@ Gets the setlist for a specific event.
 
 ###### Required Parameters:
   * `eventId` - The ID of the event.
-  
+
 ###### Example:
 ```js
-songkickApi.getEventSetlist(eventId);
+songkickApi.getEventSetlist(11129128);
 ```
