@@ -1,0 +1,35 @@
+{
+  "name": "songkick-api-node",
+  "version": "0.0.1",
+  "description": "A full-fledged Songkick API wrapper/enhancer for Node.js",
+  "license": "MIT",
+  "author": {
+    "name": "Andrew Schneider",
+    "email": "andrew.mark.schneider@gmail.com",
+    "url": "https://github.com/schnogz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schnogz/songkick-api-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schnogz/songkick-api-node/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "songkick",
+    "api",
+    "promises"
+  ],
+  "dependencies": {
+    "lodash": "4.17.4",
+    "q": "1.5.0",
+    "querystring": "0.2.0",
+    "request": "2.81.0",
+    "util": "0.10.3"
+  },
+  "devDependencies": {}
+}
