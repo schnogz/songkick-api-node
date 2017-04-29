@@ -25,17 +25,21 @@ const songkickApi = new Songkick('YourApiKey', { returnXML: true });
 #### searchEvents(params)
 Returns a list of events based on search params.
 
-Required Parameters: (artist_name OR location)
+###### Required Parameters:
 * `artist_name` - The name of an artist to search for.
 * `location` - The location of the event. 
-  
-Optional Parameters: ((min_date AND max_date), page, per_page)
+
+Note: Requires either artist_name or location, not both.
+
+###### Optional Parameters:
 * `min_date`- The earliest date of events to return (YYYY-MM-DD).
 * `max_date`- The latest date of events to return (YYYY-MM-DD).
 * `page`- The offset for paginated results (first page = 1).
 * `per_page`- The number of results for paginated results (max 50).
-     
-Examples:
+
+Note: If using either date option, both min_date and max_date are required.
+
+###### Examples:
 ```js
 songkickApi.searchEvents({ artist_name: 'Radiohead' });
 songkickApi.searchEvents({ location: 'geo:44.9325881,-93.26754419999999' });
@@ -45,10 +49,10 @@ songkickApi.searchEvents({ location: 'sk:35130' });
 #### getEventDetails(eventId)
 Gets detailed event information, including venue information.
 
-Required Parameters:
+###### Required Parameters:
   * `eventId` - The ID of the event.
   
-Example:
+###### Example:
 ```js
 songkickApi.getEventDetails(eventId);
 ```
@@ -56,10 +60,10 @@ songkickApi.getEventDetails(eventId);
 #### getEventSetlist(eventId)
 Gets the setlist for a specific event.
 
-Required Parameters:
+###### Required Parameters:
   * `eventId` - The ID of the event.
   
-Example:
+###### Example:
 ```js
 songkickApi.getEventSetlist(eventId);
 ```
