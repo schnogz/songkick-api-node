@@ -15,9 +15,9 @@
   "bugs": {
     "url": "https://github.com/schnogz/songkick-api-node/issues"
   },
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node test.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
