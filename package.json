@@ -1,6 +1,6 @@
 {
   "name": "songkick-api-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A full-fledged Songkick API wrapper/enhancer for Node.js",
   "license": "MIT",
   "author": {
