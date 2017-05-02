@@ -1,6 +1,6 @@
 {
   "name": "songkick-api-node",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A full-fledged Songkick API wrapper/enhancer for Node.js",
   "license": "MIT",
   "author": {
@@ -15,9 +15,8 @@
   "bugs": {
     "url": "https://github.com/schnogz/songkick-api-node/issues"
   },
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
