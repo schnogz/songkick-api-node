@@ -10,12 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/schnogz/songkick-api-node.git"
+    "url": "git://github.com/schnogz/songkick-api-node.git"
   },
   "bugs": {
     "url": "https://github.com/schnogz/songkick-api-node/issues"
   },
   "main": "lib/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
