@@ -1,5 +1,5 @@
 {
-  "name": "songkick-api-node",
+  "name": "@schnogz/songkick-api-node",
   "version": "1.0.3",
   "description": "A full-fledged Songkick API wrapper/enhancer for Node.js",
   "license": "MIT",
@@ -8,10 +8,7 @@
     "email": "andrew.mark.schneider@gmail.com",
     "url": "https://github.com/schnogz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/schnogz/songkick-api-node.git"
-  },
+  "repository": "https://github.com/schnogz/songkick-api-node.git",
   "bugs": {
     "url": "https://github.com/schnogz/songkick-api-node/issues"
   },
